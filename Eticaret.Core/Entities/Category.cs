@@ -22,6 +22,6 @@ namespace Eticaret.Core.Entities
         public int OrderNo { get; set; }
         [Display(Name = "Kayıt Tarihi"), ScaffoldColumn(false)]
         public DateTime CreateDate { get; set; }= DateTime.Now;
-        public IList<Product> Products { get; set; } // in a category can be more than one products
+        public IList<Product>? Products { get; set; } // in a category can be more than one products
     }
 }

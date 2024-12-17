@@ -13,9 +13,9 @@ namespace Eticaret.Core.Entities
         [Display(Name = "Aktif?")]
         public bool IsActive {  get; set; } // you can do active or passive for users
         [Display(Name = "Kayıt Tarihi"), ScaffoldColumn(false)]
-        public DateTime CreateDate { get; set; }  // ıt's create date for brand
+        public DateTime CreateDate { get; set; } = DateTime.Now; // ıt's create date for brand
         [Display(Name = "Sıra No")]
         public int OrderNo { get; set; }
-        public IList<Product> Products { get; set; } // a brand can have more than one product
+        public IList<Product>? Products { get; set; } // a brand can have more than one product
     }
 }
