@@ -17,7 +17,7 @@ namespace Eticaret.Data.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.10")
+                .HasAnnotation("ProductVersion", "9.0.0")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -79,14 +79,14 @@ namespace Eticaret.Data.Migrations
                         new
                         {
                             Id = 1,
-                            CreateDate = new DateTime(2024, 12, 13, 17, 41, 50, 952, DateTimeKind.Local).AddTicks(2514),
+                            CreateDate = new DateTime(2025, 1, 9, 14, 45, 38, 503, DateTimeKind.Local).AddTicks(9284),
                             Email = "ripplex@inspire.com",
                             IsActive = true,
                             IsAdmin = true,
                             Name = "Test",
                             Password = "123456*",
                             Surname = "User",
-                            UserGuid = new Guid("51bb6576-6132-432a-b759-8e45c42d5204"),
+                            UserGuid = new Guid("50d689ec-2bb5-489e-995f-2411e22afe0b"),
                             UserName = "Admin"
                         });
                 });
@@ -168,7 +168,7 @@ namespace Eticaret.Data.Migrations
                         new
                         {
                             Id = 1,
-                            CreateDate = new DateTime(2024, 12, 13, 17, 41, 50, 952, DateTimeKind.Local).AddTicks(4826),
+                            CreateDate = new DateTime(2025, 1, 9, 14, 45, 38, 506, DateTimeKind.Local).AddTicks(7638),
                             IsActive = true,
                             IsTopMenu = true,
                             Name = "Elektronik",
@@ -178,7 +178,7 @@ namespace Eticaret.Data.Migrations
                         new
                         {
                             Id = 2,
-                            CreateDate = new DateTime(2024, 12, 13, 17, 41, 50, 952, DateTimeKind.Local).AddTicks(4829),
+                            CreateDate = new DateTime(2025, 1, 9, 14, 45, 38, 506, DateTimeKind.Local).AddTicks(8396),
                             IsActive = true,
                             IsTopMenu = true,
                             Name = "Bilgisayar",

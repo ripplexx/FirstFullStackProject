@@ -161,15 +161,15 @@ namespace Eticaret.Data.Migrations
             migrationBuilder.InsertData(
                 table: "AppUsers",
                 columns: new[] { "Id", "CreateDate", "Email", "IsActive", "IsAdmin", "Name", "Password", "Phone", "Surname", "UserGuid", "UserName" },
-                values: new object[] { 1, new DateTime(2024, 12, 13, 17, 41, 50, 952, DateTimeKind.Local).AddTicks(2514), "ripplex@inspire.com", true, true, "Test", "123456*", null, "User", new Guid("51bb6576-6132-432a-b759-8e45c42d5204"), "Admin" });
+                values: new object[] { 1, new DateTime(2025, 1, 9, 14, 45, 38, 503, DateTimeKind.Local).AddTicks(9284), "ripplex@inspire.com", true, true, "Test", "123456*", null, "User", new Guid("50d689ec-2bb5-489e-995f-2411e22afe0b"), "Admin" });
 
             migrationBuilder.InsertData(
                 table: "Categories",
                 columns: new[] { "Id", "CreateDate", "Description", "Image", "IsActive", "IsTopMenu", "Name", "OrderNo", "ParentId" },
                 values: new object[,]
                 {
-                    { 1, new DateTime(2024, 12, 13, 17, 41, 50, 952, DateTimeKind.Local).AddTicks(4826), null, null, true, true, "Elektronik", 1, 0 },
-                    { 2, new DateTime(2024, 12, 13, 17, 41, 50, 952, DateTimeKind.Local).AddTicks(4829), null, null, true, true, "Bilgisayar", 2, 0 }
+                    { 1, new DateTime(2025, 1, 9, 14, 45, 38, 506, DateTimeKind.Local).AddTicks(7638), null, null, true, true, "Elektronik", 1, 0 },
+                    { 2, new DateTime(2025, 1, 9, 14, 45, 38, 506, DateTimeKind.Local).AddTicks(8396), null, null, true, true, "Bilgisayar", 2, 0 }
                 });
 
             migrationBuilder.CreateIndex(

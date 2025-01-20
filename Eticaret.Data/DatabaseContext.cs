@@ -1,6 +1,7 @@
 ﻿using Eticaret.Core.Entities;
 using Eticaret.Data.Configurations;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Diagnostics;
 using System.Reflection;
 
 namespace Eticaret.Data
@@ -18,6 +19,8 @@ namespace Eticaret.Data
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(@"Server=DESKTOP-DDN0FM6;Database=EticaretDb; Trusted_Connection=True; TrustServerCertificate=True;");
+
+            optionsBuilder.ConfigureWarnings(warnings => warnings.Ignore(RelationalEventId.PendingModelChangesWarning));
             base.OnConfiguring(optionsBuilder);
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)

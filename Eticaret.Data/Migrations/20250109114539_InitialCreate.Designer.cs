@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Eticaret.Data.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20250106101102_NewsConfigurationDesc")]
-    partial class NewsConfigurationDesc
+    [Migration("20250109114539_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -82,14 +82,14 @@ namespace Eticaret.Data.Migrations
                         new
                         {
                             Id = 1,
-                            CreateDate = new DateTime(2025, 1, 6, 13, 11, 1, 490, DateTimeKind.Local).AddTicks(9056),
+                            CreateDate = new DateTime(2025, 1, 9, 14, 45, 38, 503, DateTimeKind.Local).AddTicks(9284),
                             Email = "ripplex@inspire.com",
                             IsActive = true,
                             IsAdmin = true,
                             Name = "Test",
                             Password = "123456*",
                             Surname = "User",
-                            UserGuid = new Guid("8cd2f381-5f26-4e3b-acef-b050e393c5de"),
+                            UserGuid = new Guid("50d689ec-2bb5-489e-995f-2411e22afe0b"),
                             UserName = "Admin"
                         });
                 });
@@ -171,7 +171,7 @@ namespace Eticaret.Data.Migrations
                         new
                         {
                             Id = 1,
-                            CreateDate = new DateTime(2025, 1, 6, 13, 11, 1, 493, DateTimeKind.Local).AddTicks(6424),
+                            CreateDate = new DateTime(2025, 1, 9, 14, 45, 38, 506, DateTimeKind.Local).AddTicks(7638),
                             IsActive = true,
                             IsTopMenu = true,
                             Name = "Elektronik",
@@ -181,7 +181,7 @@ namespace Eticaret.Data.Migrations
                         new
                         {
                             Id = 2,
-                            CreateDate = new DateTime(2025, 1, 6, 13, 11, 1, 493, DateTimeKind.Local).AddTicks(7201),
+                            CreateDate = new DateTime(2025, 1, 9, 14, 45, 38, 506, DateTimeKind.Local).AddTicks(8396),
                             IsActive = true,
                             IsTopMenu = true,
                             Name = "Bilgisayar",
@@ -241,7 +241,8 @@ namespace Eticaret.Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(750)
+                        .HasColumnType("nvarchar(750)");
 
                     b.Property<string>("Image")
                         .HasMaxLength(100)

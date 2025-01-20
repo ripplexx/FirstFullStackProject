@@ -33,6 +33,7 @@ namespace Eticaret.Data.Configurations
                     ParentId=0,
                     OrderNo=2,
                 } // we can add different category like this one
+
                 );
         }
     }
