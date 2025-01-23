@@ -1,4 +1,6 @@
 using Eticaret.Data;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using System.Security.Claims;
 namespace Eticaret.WebUI
 {
     public class Program
@@ -10,6 +12,20 @@ namespace Eticaret.WebUI
             // Add services to the container.
             builder.Services.AddControllersWithViews();
             builder.Services.AddDbContext<DatabaseContext>();
+            builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(x =>
+            {
+                x.LoginPath = "/Account/SignIn"; // Giriþ yapma sayfasý
+                x.LogoutPath = "/Account/SignOut"; // Çýkýþ yapma sayfasý
+                x.AccessDeniedPath = "/Account/AccessDenied"; // Eriþim reddedildi sayfasý
+                x.Cookie.Name = "Account"; // Çerez adý
+                x.Cookie.MaxAge = TimeSpan.FromDays(60); // Çerez süresi gün olarak
+                x.Cookie.IsEssential = true; // Zorunlu çerez
+            }); // Kimlik doðrulama
+            builder.Services.AddAuthorization(x =>
+            {
+                x.AddPolicy("AdminPolicy", policy => policy.RequireClaim(ClaimTypes.Role, "Admin")); // Admin yetkisi. Admin yetkisi olanlar
+                x.AddPolicy("UserPolicy", policy => policy.RequireClaim(ClaimTypes.Role, "Admin","User","Customer")); // User yetkisi. Admin, User ve Customer yetkisi olanlar
+            }); // Yetkilendirme için
 
             var app = builder.Build();
 
@@ -26,7 +42,8 @@ namespace Eticaret.WebUI
 
             app.UseRouting();
 
-            app.UseAuthorization();
+            app.UseAuthentication(); // Burasý önce gelecek. Önce oturum açma
+            app.UseAuthorization(); // Sonra yetkilendirme
 
             app.MapControllerRoute(
                         name: "admin",

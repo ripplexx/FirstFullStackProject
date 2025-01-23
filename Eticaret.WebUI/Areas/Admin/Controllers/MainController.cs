@@ -1,8 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Eticaret.WebUI.Areas.Admin.Controllers
 {
-    [Area("Admin")] // MainController Area Admin bölgesi içerisinde çalışacak
+    [Area("Admin"), Authorize(Policy = "AdminPolicy")] // MainController Area Admin bölgesi içerisinde çalışacak
     public class MainController : Controller
     {
         public IActionResult Index()

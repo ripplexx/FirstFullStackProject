@@ -32,6 +32,12 @@ namespace Eticaret.WebUI.Controllers
         {
             return View();
         }
+
+        [Route("AccessDenied")] // Burasý bir route tanýmlamasýdýr. Bu sayfaya eriþim izni olmayan kullanýcýlar yönlendirilir.
+        public IActionResult AccessDenied()
+        {
+            return View();
+        }
         public IActionResult ContactUs()
         {
             return View();
